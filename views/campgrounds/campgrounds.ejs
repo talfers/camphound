@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+<div class="container">
+        <header class="jumbotron">
+            <h1>Welcome to Camphound</h1>
+            <p>View our campsites from all around the world</p>
+            <p>
+                <a class="btn btn-success btn-lrg" href="/campgrounds/new">Create a New Campground</a>
+            </p>
+        </header>
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(site) { %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src=" <%=site.image%> ">
+                
+                    <div class="caption">
+                        <h4> <%=site.name%> </h4>
+                        <p>
+                            <a href="/campgrounds/<%= site._id %>" class="btn btn-success">More Info</a>
+                        </p>                    
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <a href="/">Home</a>
+</div>
+
+<% include ../partials/footer %>
